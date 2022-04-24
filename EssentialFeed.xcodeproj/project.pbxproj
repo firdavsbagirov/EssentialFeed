@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840886F128155DCC00120BC8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840886F028155DCC00120BC8 /* HTTPClient.swift */; };
 		840DF2F42809E96400D64083 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840DF2F32809E96400D64083 /* RemoteFeedLoader.swift */; };
 		84949CC328089A6C002AFE21 /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = 84949CC228089A6C002AFE21 /* EssentialFeed.docc */; };
 		84949CC928089A6C002AFE21 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84949CBE28089A6C002AFE21 /* EssentialFeed.framework */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840886F028155DCC00120BC8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		840DF2F32809E96400D64083 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		84949CBE28089A6C002AFE21 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84949CC128089A6C002AFE21 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				840DF2F32809E96400D64083 /* RemoteFeedLoader.swift */,
+				840886F028155DCC00120BC8 /* HTTPClient.swift */,
 			);
 			path = FeedApi;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				840DF2F42809E96400D64083 /* RemoteFeedLoader.swift in Sources */,
+				840886F128155DCC00120BC8 /* HTTPClient.swift in Sources */,
 				84949CDB28089ADE002AFE21 /* FeedLoader.swift in Sources */,
 				84949CD928089A87002AFE21 /* FeedItem.swift in Sources */,
 				84949CC328089A6C002AFE21 /* EssentialFeed.docc in Sources */,
