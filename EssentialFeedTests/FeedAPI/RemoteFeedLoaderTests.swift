@@ -83,7 +83,6 @@ class RemoteFeedLoaderTest: XCTestCase {
         let item1 = makeItem(id: UUID(),
                              imageURL: URL(string: "http://a-url.com")!)
         
-        
         let item2 = makeItem(id: UUID(),
                              description: "a- description",
                              location: "a-location",
@@ -120,7 +119,6 @@ class RemoteFeedLoaderTest: XCTestCase {
         trackForMemoryLeak(client, file: file, line: line)
         return (sut, client)
     }
-    
     
     private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
         return .failure(error )
@@ -176,7 +174,6 @@ class RemoteFeedLoaderTest: XCTestCase {
         
     }
     
-        
     private class HTTPClientSpy: HTTPClient {
         var requestedURLs: [URL] {
             return messages.map({ $0.url })
@@ -201,6 +198,5 @@ class RemoteFeedLoaderTest: XCTestCase {
             
             messages[index].completion(.success(data, response))
         }
-        
     }
 }
