@@ -42,7 +42,7 @@ internal final class FeedItemsMapper {
             return .failure(RemoteFeedLoader.Error.invalidData)
         }
         
-        let items = root.items.map { $0.item }
-        return .success(items)
+        let feedItems = root.feed
+        return .success(feedItems)
     }
 }
