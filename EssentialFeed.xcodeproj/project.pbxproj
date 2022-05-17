@@ -160,10 +160,10 @@
 			isa = PBXGroup;
 			children = (
 				84B2837A2832B4F700573C33 /* FeedCache */,
-				84949CC128089A6C002AFE21 /* EssentialFeed.h */,
-				84949CC228089A6C002AFE21 /* EssentialFeed.docc */,
 				84949CDC28089B7A002AFE21 /* FeedFeature */,
 				840DF2F52809E96C00D64083 /* FeedApi */,
+				84949CC128089A6C002AFE21 /* EssentialFeed.h */,
+				84949CC228089A6C002AFE21 /* EssentialFeed.docc */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
