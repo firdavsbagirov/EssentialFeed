@@ -90,18 +90,8 @@ class CodableFeedStoreTests: XCTestCase {
         
         expect(sut, toRetrieveTwice: .empty)
     }
-    
-    func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
-        let sut = makeSUT()
-        let feed = uniqueImageFeed().local
-        let timestamp = Date()
         
-        insert((feed, timestamp), to: sut)
-        
-        expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp))
-    }
-    
-    func test_retrieveAfterInsertinToEmptyCache_deliversInsertedValues() {
+    func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
         /// given
         let sut = makeSUT()
         let feed = uniqueImageFeed().local
@@ -112,6 +102,16 @@ class CodableFeedStoreTests: XCTestCase {
         
         /// then
         expect(sut, toRetrieve: .found(feed: feed, timestamp: timestamp))
+    }
+    
+    func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
+        let sut = makeSUT()
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+        
+        insert((feed, timestamp), to: sut)
+        
+        expect(sut, toRetrieveTwice: .found(feed: feed, timestamp: timestamp))
     }
     
     // MARK: Helpers
