@@ -83,7 +83,6 @@ Location</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iV5-z2-29a" firstAttribute="width" secondItem="L28-0O-mWW" secondAttribute="width" id="WBa-Af-plX"/>
-                                                <constraint firstItem="9M9-op-VqA" firstAttribute="width" secondItem="L28-0O-mWW" secondAttribute="width" multiplier="0.221925" id="uIo-FR-9HI"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
