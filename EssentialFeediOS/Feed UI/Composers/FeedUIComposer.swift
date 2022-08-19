@@ -95,7 +95,7 @@ private final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
             case let .success(feed):
                 self?.presenter?.didFinishLoadingFeed(with: feed)
             case let .failure(error):
-                self?.presenter?.didFinishLoading(with: error)
+                self?.presenter?.didFinishLoadingFeed(with: error)
             }
         }
     }
