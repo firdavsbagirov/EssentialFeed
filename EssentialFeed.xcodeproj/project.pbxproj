@@ -83,6 +83,9 @@
 		C59E357228AFBACA005595E4 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E357128AFBACA005595E4 /* FeedImageDataLoaderPresentationAdapter.swift */; };
 		C59E357428AFBB31005595E4 /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E357328AFBB31005595E4 /* FeedLoaderPresentationAdapter.swift */; };
 		C59E357628AFBB66005595E4 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E357528AFBB66005595E4 /* FeedViewAdapter.swift */; };
+		C5B6D9B628B5389200F73D8E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9B528B5389200F73D8E /* ErrorView.swift */; };
+		C5B6D9B928B53E8300F73D8E /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9B828B53E8300F73D8E /* FeedErrorViewModel.swift */; };
+		C5B6D9BB28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */; };
 		C5B7F64328A7C3A700A53B0B /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B7F63928A7C3A600A53B0B /* EssentialFeediOS.framework */; };
 		C5B7F65228A7D2DA00A53B0B /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7F65128A7D2DA00A53B0B /* FeedUIIntegrationTests.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +215,9 @@
 		C59E357128AFBACA005595E4 /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		C59E357328AFBB31005595E4 /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		C59E357528AFBB66005595E4 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
+		C5B6D9B528B5389200F73D8E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		C5B6D9B828B53E8300F73D8E /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
+		C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControls+Helpers.swift"; sourceTree = "<group>"; };
 		C5B7F63928A7C3A600A53B0B /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B7F64228A7C3A700A53B0B /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B7F65028A7D2D900A53B0B /* EssentialFeediOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EssentialFeediOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -451,12 +457,11 @@
 		C5506D0A28ACDE9C00017508 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5B6D9B728B53E2500F73D8E /* Helpers */,
 				C53FE48228ABC0E100E760C1 /* FeedImageCell.swift */,
-				C5506CFE28ABD6C500017508 /* UIView+Shimmering.swift */,
 				C59E355928AF7D53005595E4 /* Feed.storyboard */,
 				C59E355B28AF7E19005595E4 /* Feed.xcassets */,
-				C59E355D28AF92E5005595E4 /* UITableView+Dequeueing.swift */,
-				C59E355F28AF93CF005595E4 /* UIImageView+Animations.swift */,
+				C5B6D9B528B5389200F73D8E /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				C59E355328AE5F9D005595E4 /* FeedImagePresenter.swift */,
 				C59E355528AE6574005595E4 /* FeedLoadingViewModel.swift */,
 				C59E355728AE6588005595E4 /* FeedViewModel.swift */,
+				C5B6D9B828B53E8300F73D8E /* FeedErrorViewModel.swift */,
 				C59E356728AFA8AE005595E4 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
@@ -543,6 +549,17 @@
 				C59E356B28AFA9A3005595E4 /* FeedLocalizationTests.swift */,
 			);
 			path = "Feed Presentation";
+			sourceTree = "<group>";
+		};
+		C5B6D9B728B53E2500F73D8E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C5506CFE28ABD6C500017508 /* UIView+Shimmering.swift */,
+				C59E355F28AF93CF005595E4 /* UIImageView+Animations.swift */,
+				C59E355D28AF92E5005595E4 /* UITableView+Dequeueing.swift */,
+				C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C5B7F63A28A7C3A600A53B0B /* EssentialFeediOS */ = {
@@ -873,10 +890,12 @@
 			files = (
 				C59E355228AE4C6F005595E4 /* FeedPresenter.swift in Sources */,
 				C5506D1D28ACF09D00017508 /* FeedImageDataLoader.swift in Sources */,
+				C5B6D9B628B5389200F73D8E /* ErrorView.swift in Sources */,
 				C59E355828AE6588005595E4 /* FeedViewModel.swift in Sources */,
 				C59E355E28AF92E5005595E4 /* UITableView+Dequeueing.swift in Sources */,
 				C59E355628AE6574005595E4 /* FeedLoadingViewModel.swift in Sources */,
 				C5506CFF28ABD6C500017508 /* UIView+Shimmering.swift in Sources */,
+				C5B6D9BB28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift in Sources */,
 				C59E357428AFBB31005595E4 /* FeedLoaderPresentationAdapter.swift in Sources */,
 				C59E357228AFBACA005595E4 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				C59E355428AE5F9D005595E4 /* FeedImagePresenter.swift in Sources */,
@@ -887,6 +906,7 @@
 				C53FE48328ABC0E100E760C1 /* FeedImageCell.swift in Sources */,
 				C5506D2928AD52ED00017508 /* FeedImageViewModel.swift in Sources */,
 				C5506D2128ACFE2C00017508 /* FeedImageCellController.swift in Sources */,
+				C5B6D9B928B53E8300F73D8E /* FeedErrorViewModel.swift in Sources */,
 				C59E357628AFBB66005595E4 /* FeedViewAdapter.swift in Sources */,
 				C5506D2428AD046100017508 /* FeedUIComposer.swift in Sources */,
 			);
