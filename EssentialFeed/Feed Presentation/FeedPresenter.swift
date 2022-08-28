@@ -32,7 +32,7 @@ public final class FeedPresenter {
                                  comment: "Error message displayed when we can't load the image feed from the server")
     }
     
-    public init(errorView: FeedErrorView, loadingView: FeedLoadingView, feedView: FeedView) {
+    public init(feedView: FeedView, loadingView: FeedLoadingView, errorView: FeedErrorView) {
         self.errorView = errorView
         self.loadingView = loadingView
         self.feedView = feedView
