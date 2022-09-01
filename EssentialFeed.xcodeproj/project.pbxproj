@@ -49,6 +49,7 @@
 		84CE242A288B17020019EA16 /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D44DB286E0F7E00419294 /* FeedCacheTestHelpers.swift */; };
 		84CE242B288B170F0019EA16 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D44DD286E105500419294 /* SharedTestHelpers.swift */; };
 		84F419332809D42900F03F13 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F419322809D42900F03F13 /* RemoteFeedLoaderTests.swift */; };
+		C53ECA8B28C097200077953C /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D1C28ACF09D00017508 /* FeedImageDataLoader.swift */; };
 		C53FE48328ABC0E100E760C1 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53FE48228ABC0E100E760C1 /* FeedImageCell.swift */; };
 		C5506CFD28ABD41600017508 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506CFC28ABD41600017508 /* FeedViewController.swift */; };
 		C5506CFF28ABD6C500017508 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506CFE28ABD6C500017508 /* UIView+Shimmering.swift */; };
@@ -60,7 +61,6 @@
 		C5506D1428ACE40400017508 /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D1328ACE40400017508 /* FeedImageCell+TestHelpers.swift */; };
 		C5506D1628ACE47B00017508 /* FeedViewControllerTests+LoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D1528ACE47B00017508 /* FeedViewControllerTests+LoaderSpy.swift */; };
 		C5506D1828ACEF8900017508 /* FeedViewControllerTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D1728ACEF8900017508 /* FeedViewControllerTests+Assertions.swift */; };
-		C5506D1D28ACF09D00017508 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D1C28ACF09D00017508 /* FeedImageDataLoader.swift */; };
 		C5506D2128ACFE2C00017508 /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D2028ACFE2C00017508 /* FeedImageCellController.swift */; };
 		C5506D2428AD046100017508 /* FeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D2328AD046100017508 /* FeedUIComposer.swift */; };
 		C5506D2928AD52ED00017508 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5506D2828AD52ED00017508 /* FeedImageViewModel.swift */; };
@@ -427,6 +427,7 @@
 			children = (
 				84949CD828089A87002AFE21 /* FeedItem.swift */,
 				84949CDA28089ADE002AFE21 /* FeedLoader.swift */,
+				C5506D1C28ACF09D00017508 /* FeedImageDataLoader.swift */,
 			);
 			path = "Feed Feature";
 			sourceTree = "<group>";
@@ -511,14 +512,6 @@
 			path = "Feed UI";
 			sourceTree = "<group>";
 		};
-		C5506D1B28ACF09000017508 /* Feed Image Loader */ = {
-			isa = PBXGroup;
-			children = (
-				C5506D1C28ACF09D00017508 /* FeedImageDataLoader.swift */,
-			);
-			path = "Feed Image Loader";
-			sourceTree = "<group>";
-		};
 		C5506D2228AD045700017508 /* Composers */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,7 +579,6 @@
 		C5B7F63A28A7C3A600A53B0B /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				C5506D1B28ACF09000017508 /* Feed Image Loader */,
 				C5506D2528AD4F9100017508 /* Feed Presentation */,
 				C5506D1928ACF01400017508 /* Feed UI */,
 			);
@@ -874,6 +866,7 @@
 				C573936128BB83CC00ACD103 /* FeedLoadingViewModel.swift in Sources */,
 				840886F128155DCC00120BC8 /* HTTPClient.swift in Sources */,
 				84226E6A287C78BC006EAECB /* CoreDataHelpers.swift in Sources */,
+				C53ECA8B28C097200077953C /* FeedImageDataLoader.swift in Sources */,
 				84949CDB28089ADE002AFE21 /* FeedLoader.swift in Sources */,
 				843017742877463800EB1FBA /* CoreDataFeedStore.swift in Sources */,
 				84226E6C287C792E006EAECB /* ManagedCache.swift in Sources */,
@@ -917,7 +910,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5506D1D28ACF09D00017508 /* FeedImageDataLoader.swift in Sources */,
 				C5B6D9B628B5389200F73D8E /* ErrorView.swift in Sources */,
 				C59E355E28AF92E5005595E4 /* UITableView+Dequeueing.swift in Sources */,
 				C5506CFF28ABD6C500017508 /* UIView+Shimmering.swift in Sources */,
