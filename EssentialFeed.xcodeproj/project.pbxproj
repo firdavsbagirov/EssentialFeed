@@ -80,6 +80,8 @@
 		C573936128BB83CC00ACD103 /* FeedLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573936028BB83CC00ACD103 /* FeedLoadingViewModel.swift */; };
 		C573936328BB83EA00ACD103 /* FeedErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573936228BB83EA00ACD103 /* FeedErrorViewModel.swift */; };
 		C573936428BB860400ACD103 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E356B28AFA9A3005595E4 /* FeedLocalizationTests.swift */; };
+		C573C6A528EB4A6400EBE404 /* FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573C6A428EB4A6400EBE404 /* FeedImageDataStore.swift */; };
+		C573C6A728EB4A8F00EBE404 /* LocalFeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573C6A628EB4A8F00EBE404 /* LocalFeedImageDataLoader.swift */; };
 		C59E355428AE5F9D005595E4 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E355328AE5F9D005595E4 /* FeedImagePresenter.swift */; };
 		C59E355A28AF7D53005595E4 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59E355928AF7D53005595E4 /* Feed.storyboard */; };
 		C59E355C28AF7E19005595E4 /* Feed.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59E355B28AF7E19005595E4 /* Feed.xcassets */; };
@@ -221,6 +223,8 @@
 		C573935E28BB83A100ACD103 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		C573936028BB83CC00ACD103 /* FeedLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoadingViewModel.swift; sourceTree = "<group>"; };
 		C573936228BB83EA00ACD103 /* FeedErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedErrorViewModel.swift; sourceTree = "<group>"; };
+		C573C6A428EB4A6400EBE404 /* FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStore.swift; sourceTree = "<group>"; };
+		C573C6A628EB4A8F00EBE404 /* LocalFeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImageDataLoader.swift; sourceTree = "<group>"; };
 		C59E355328AE5F9D005595E4 /* FeedImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagePresenter.swift; sourceTree = "<group>"; };
 		C59E355928AF7D53005595E4 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		C59E355B28AF7E19005595E4 /* Feed.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Feed.xcassets; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 				84B2837D2832B54700573C33 /* FeedStore.swift */,
 				843C35C22834150A0004E4AD /* LocalFeedImage.swift */,
 				84103C9428705EAC000DB2B9 /* FeedCachePolicy.swift */,
+				C573C6A428EB4A6400EBE404 /* FeedImageDataStore.swift */,
+				C573C6A628EB4A8F00EBE404 /* LocalFeedImageDataLoader.swift */,
 			);
 			path = "Feed Cache";
 			sourceTree = "<group>";
@@ -904,6 +910,7 @@
 				84949CDB28089ADE002AFE21 /* FeedLoader.swift in Sources */,
 				843017742877463800EB1FBA /* CoreDataFeedStore.swift in Sources */,
 				84226E6C287C792E006EAECB /* ManagedCache.swift in Sources */,
+				C573C6A528EB4A6400EBE404 /* FeedImageDataStore.swift in Sources */,
 				C53ECA9528C203ED0077953C /* HTTPURLResponse+StatusCode.swift in Sources */,
 				840886F328155DFB00120BC8 /* FeedItemsMapper.swift in Sources */,
 				84949CD928089A87002AFE21 /* FeedItem.swift in Sources */,
@@ -911,6 +918,7 @@
 				84B2837C2832B50000573C33 /* LocalFeedLoader.swift in Sources */,
 				C5AF821228BE5A9B005CEA26 /* FeedImageViewModel.swift in Sources */,
 				C53ECA9228C1F07B0077953C /* RemoteFeedImageDataLoader.swift in Sources */,
+				C573C6A728EB4A8F00EBE404 /* LocalFeedImageDataLoader.swift in Sources */,
 				84226E6E287C795D006EAECB /* ManagedFeedImage.swift in Sources */,
 				84949CC328089A6C002AFE21 /* EssentialFeed.docc in Sources */,
 				843C35C1283414C30004E4AD /* RemoteFeedItem .swift in Sources */,
