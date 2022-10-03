@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LocalFeedImageDataLoader: FeedImageDataLoader {
+public final class LocalFeedImageDataLoader: FeedImageDataLoader {
     
     private final class Task: FeedImageDataLoaderTask {
         private var completion: ((FeedImageDataLoader.Result) -> Void)?
@@ -35,11 +35,17 @@ final class LocalFeedImageDataLoader: FeedImageDataLoader {
     }
     
     private let store: FeedImageDataStore
-    init(store: FeedImageDataStore) {
+    public init(store: FeedImageDataStore) {
         self.store = store
     }
     
-    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+    public typealias SaveResult = Result<Void, Swift.Error>
+    
+    public func save(_ data: Data, for url: URL, completion: @escaping (SaveResult) -> Void) {
+        store.insert(data, for: url) { _ in  }
+    }
+    
+    public func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
         let task = Task(completion)
         store.retrieve(dataForURL: url) { [weak self] result in
             guard self != nil else { return }
