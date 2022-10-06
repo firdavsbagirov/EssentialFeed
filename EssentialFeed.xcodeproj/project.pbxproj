@@ -1528,7 +1528,7 @@
 				C5BCA12F28EEE78000D83EBD /* FeedStore2.xcdatamodel */,
 				843017762877498F00EB1FBA /* FeedStore.xcdatamodel */,
 			);
-			currentVersion = 843017762877498F00EB1FBA /* FeedStore.xcdatamodel */;
+			currentVersion = C5BCA12F28EEE78000D83EBD /* FeedStore2.xcdatamodel */;
 			path = FeedStore.xcdatamodeld;
 			sourceTree = "<group>";
 			usesTabs = 0;
