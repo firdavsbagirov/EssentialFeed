@@ -102,6 +102,7 @@
 		C5B6D9BB28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */; };
 		C5B7F64328A7C3A700A53B0B /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B7F63928A7C3A600A53B0B /* EssentialFeediOS.framework */; };
 		C5B7F65228A7D2DA00A53B0B /* FeedUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B7F65128A7D2DA00A53B0B /* FeedUIIntegrationTests.swift */; };
+		C5BCA13128EEE9D800D83EBD /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BCA13028EEE9D800D83EBD /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
 		C5DFB91528C603300082A8C1 /* LoadFeedImageDataFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFB91428C603300082A8C1 /* LoadFeedImageDataFromCacheUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -252,6 +253,7 @@
 		C5B7F65028A7D2D900A53B0B /* EssentialFeediOSTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EssentialFeediOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C5B7F65128A7D2DA00A53B0B /* FeedUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIIntegrationTests.swift; sourceTree = "<group>"; };
 		C5BCA12F28EEE78000D83EBD /* FeedStore2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore2.xcdatamodel; sourceTree = "<group>"; };
+		C5BCA13028EEE9D800D83EBD /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		C5DFB91428C603300082A8C1 /* LoadFeedImageDataFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedImageDataFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -347,6 +349,7 @@
 				84226E69287C78BC006EAECB /* CoreDataHelpers.swift */,
 				84226E6B287C792E006EAECB /* ManagedCache.swift */,
 				84226E6D287C795D006EAECB /* ManagedFeedImage.swift */,
+				C5BCA13028EEE9D800D83EBD /* CoreDataFeedStore+FeedImageDataLoader.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 				84226E6C287C792E006EAECB /* ManagedCache.swift in Sources */,
 				C573C6A528EB4A6400EBE404 /* FeedImageDataStore.swift in Sources */,
 				C53ECA9528C203ED0077953C /* HTTPURLResponse+StatusCode.swift in Sources */,
+				C5BCA13128EEE9D800D83EBD /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
 				840886F328155DFB00120BC8 /* FeedItemsMapper.swift in Sources */,
 				84949CD928089A87002AFE21 /* FeedItem.swift in Sources */,
 				84103C9528705EAC000DB2B9 /* FeedCachePolicy.swift in Sources */,
