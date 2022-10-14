@@ -95,6 +95,30 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         XCTAssertEqual(fallbackLoader.cancelledURLs, [url], "Expected to cancel URL loading from fallback loader")
     }
     
+    func test_loadImageData_deliversPrimaryDataOnPrimaryLoaderSuccess() {
+        let url = anyURL()
+        let primaryData = anyData()
+        let expectedResult: FeedImageDataLoader.Result = .success(primaryData)
+        let (sut, primaryLoader, _) = makeSUT()
+        
+        let exp = expectation(description: "Wait for load image data completion ")
+        _ = sut.loadImageData(from: url) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedFeed), .success(expectedFeed)):
+                XCTAssertEqual(receivedFeed, expectedFeed)
+            case (.failure, .failure):
+                break
+            default:
+                XCTFail("Expected \(expectedResult), got \(receivedResult) instead")
+            }
+            exp.fulfill()
+        }
+        
+        primaryLoader.completeWith(data: primaryData)
+        wait(for: [exp], timeout: 1.0)
+        
+    }
+    
     // MARK: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedImageDataLoader, primary: LoaderSpy, fallback: LoaderSpy) {
@@ -121,6 +145,10 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         return URL(string: "http://a-url.com")!
     }
     
+    func anyData() -> Data {
+        return Data("any data".utf8)
+    }
+    
     private class LoaderSpy: FeedImageDataLoader {
         private var messages = [(url: URL, completion: (FeedImageDataLoader.Result) -> Void)]()
         var loadedURLs: [URL] {
@@ -145,6 +173,10 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase {
         
         func complete(with error: Error, at index: Int = 0) {
             messages[index].completion(.failure(error))
+        }
+        
+        func completeWith(data: Data, at index: Int = 0) {
+            messages[index].completion(.success(data))
         }
     }
 }
