@@ -5,7 +5,7 @@
 //  Created by Firdavs Bagirov on 15/10/22.
 //
 
-import EssentialFeed 
+import EssentialFeed
 
 public final class FeedLoaderCacheDecorator: FeedLoader {
     private let decoratee: FeedLoader
@@ -19,9 +19,15 @@ public final class FeedLoaderCacheDecorator: FeedLoader {
     public func load(completion: @escaping (FeedLoader.Result) -> Void) {
         decoratee.load { [weak self] result in
             completion(result.map { feed in
-                self?.cache.save(feed) { _ in}
+                self?.cache.saveIgnoringResult(feed)
                 return feed
             })
         }
+    }
+}
+
+private extension FeedCache {
+    func saveIgnoringResult(_ feed: [FeedImage]) {
+        save(feed) { _ in }
     }
 }
