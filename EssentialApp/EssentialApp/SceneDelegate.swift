@@ -17,6 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         .defaultDirectoryURL()
         .appendingPathComponent("feed-store.sqlite")
     
+    private lazy var localFeedLoader: LocalFeedLoader = {
+        LocalFeedLoader(store: store, currentDate: Date.init)
+    }()
+    
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
@@ -47,7 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let remoteFeedLoader = RemoteFeedLoader(client: httpClient, url: remoteURL)
         let remoteImageLoader = RemoteFeedImageDataLoader(client: httpClient )
         
-        let localFeedLoader = LocalFeedLoader(store: store, currentDate: Date.init)
+        
         let localImageLoader = LocalFeedImageDataLoader(store: store)
         
         window?.rootViewController = UINavigationController(rootViewController: FeedUIComposer.feedComposedWith(
@@ -61,6 +65,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 fallback: FeedImageDataLoaderCacheDecorator(
                     decoratee: remoteImageLoader,
                     cache: localImageLoader))))
+    }
+    
+    func sceneWillResignActive(_ scene: UIScene) {
+        localFeedLoader.validateCache { _ in }
     }
 }
 
