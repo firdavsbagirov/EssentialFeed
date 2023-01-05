@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private let remoteURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5db4155a4fbade21d17ecd28/1572083034355/essential_app_feed.json")!
     
-    private lazy var remoteFeedLoader = RemoteFeedLoader(client: httpClient, url: remoteURL)
+    private lazy var remoteFeedLoader = RemoteFeedLoader(url: remoteURL, client: httpClient)
     
     private lazy var store: FeedStore & FeedImageDataStore = {
         try! CoreDataFeedStore(
@@ -83,3 +83,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 }
 
+
+extension RemoteLoader: FeedLoader where Resource == [FeedImage] {}
