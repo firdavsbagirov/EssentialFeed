@@ -27,13 +27,14 @@ class LoadSourcePresenterTests: XCTestCase {
         
     }
     
-    func test_didFinishLoadingFeed_displaysFeedAndStopsLoading() {
-        let (sut, view) = makeSUT()
-        let feed = uniqueImageFeed().models
+    func test_didFinishLoadingResource_displaysResourceAndStopsLoading() {
+        let (sut, view) = makeSUT(mapper: { resource in
+            resource + " view model"
+        })
         
-        sut.didFinishLoadingFeed(with: feed)
+        sut.didFinishLoading(with: "resource")
         
-        XCTAssertEqual(view.messages, [.display(feed: feed),
+        XCTAssertEqual(view.messages, [.display(resourceViewModel:  "resource view model"),
                                        .display(isLoading: false)])
     }
     
@@ -50,9 +51,14 @@ class LoadSourcePresenterTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: LoadSourcePresenter, view: ViewSpy) {
+    private func makeSUT(mapper: @escaping LoadSourcePresenter.Mapper = { _ in "any" },
+                         file: StaticString = #file,
+                         line: UInt = #line) -> (sut: LoadSourcePresenter, view: ViewSpy) {
         let view = ViewSpy()
-        let sut = LoadSourcePresenter(feedView: view, loadingView: view, errorView: view)
+        let sut = LoadSourcePresenter(resourceView: view,
+                                      loadingView: view,
+                                      errorView: view,
+                                      mapper: mapper)
         trackForMemoryLeak(view, file: file, line: line)
         trackForMemoryLeak(sut, file: file, line: line)
         return (sut, view)
@@ -68,11 +74,12 @@ class LoadSourcePresenterTests: XCTestCase {
         return value
     }
     
-    private class ViewSpy: FeedErrorView, FeedLoadingView, FeedView {
+    private class ViewSpy: FeedErrorView, FeedLoadingView, ResourceView {
+        
         enum Message: Hashable {
             case display(errorMessage: String?)
             case display(isLoading: Bool)
-            case display(feed: [FeedImage])
+            case display(resourceViewModel: String)
         }
         
         
@@ -86,8 +93,8 @@ class LoadSourcePresenterTests: XCTestCase {
             messages.insert(.display(isLoading: viewModel.isLoading))
         }
         
-        func display(_ viewModel: FeedViewModel) {
-            messages.insert(.display(feed: viewModel.feed))
+        func display(_ viewModel: String) {
+            messages.insert(.display(resourceViewModel: viewModel))
         }
     }
 }
