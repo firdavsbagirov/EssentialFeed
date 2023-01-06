@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  EssentialFeed
+
+  Created by Firdavs Bagirov on 06/01/23.
+  
+*/
+
+"GENERIC_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";
