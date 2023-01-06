@@ -1,5 +1,5 @@
 //
-//  LoadSourcePresenterTests.swift
+//  LoadResourcePresenterTests.swift
 //  EssentialFeedTests
 //
 //  Created by Firdavs Bagirov on 06/01/23.
@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class LoadSourcePresenterTests: XCTestCase {
+class LoadResourcePresenterTests: XCTestCase {
     
     func test_init_doesNotSendMessagesToView() {
         let (_, view) = makeSUT()
@@ -51,11 +51,13 @@ class LoadSourcePresenterTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(mapper: @escaping LoadSourcePresenter.Mapper = { _ in "any" },
+    private typealias SUT = LoadResourcePresenter<String, ViewSpy>
+    
+    private func makeSUT(mapper: @escaping SUT.Mapper = { _ in "any" },
                          file: StaticString = #file,
-                         line: UInt = #line) -> (sut: LoadSourcePresenter, view: ViewSpy) {
+                         line: UInt = #line) -> (sut: SUT, view: ViewSpy) {
         let view = ViewSpy()
-        let sut = LoadSourcePresenter(resourceView: view,
+        let sut = SUT(resourceView: view,
                                       loadingView: view,
                                       errorView: view,
                                       mapper: mapper)
@@ -66,7 +68,7 @@ class LoadSourcePresenterTests: XCTestCase {
     
     func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
         let table = "Feed"
-        let bundle = Bundle(for: LoadSourcePresenter.self)
+        let bundle = Bundle(for: SUT.self)
         let value = bundle.localizedString(forKey: key, value: nil, table: table)
         if value == key {
             XCTFail("Missing localized string for key: \(key) in table: \(table)", file: file, line: line)
@@ -75,6 +77,7 @@ class LoadSourcePresenterTests: XCTestCase {
     }
     
     private class ViewSpy: FeedErrorView, FeedLoadingView, ResourceView {
+        typealias ResourceViewModel = String
         
         enum Message: Hashable {
             case display(errorMessage: String?)

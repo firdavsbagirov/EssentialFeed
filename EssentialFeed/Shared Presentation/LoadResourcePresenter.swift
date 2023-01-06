@@ -1,5 +1,5 @@
 //
-//  LoadSourcePresenter.swift
+//  LoadResourcePresenter.swift
 //  EssentialFeed
 //
 //  Created by Firdavs Bagirov on 06/01/23.
@@ -8,14 +8,16 @@
 import Foundation
 
 public protocol ResourceView {
-    func display(_ viewModel: String)
+    associatedtype ResourceViewModel
+
+    func display(_ viewModel: ResourceViewModel)
 }
 
-public final class LoadSourcePresenter {
-    public typealias Mapper =  (String) -> String
+public final class LoadResourcePresenter<Resource, View: ResourceView> {
+    public typealias Mapper =  (Resource) -> View.ResourceViewModel
+    private let resourceView: View
     private let errorView: FeedErrorView
     private let loadingView: FeedLoadingView
-    private let resourceView: ResourceView
     private let mapper: Mapper
     
     private var feedLoadError: String {
@@ -25,7 +27,7 @@ public final class LoadSourcePresenter {
                                  comment: "Error message displayed when we can't load the image feed from the server")
     }
     
-    public init(resourceView: ResourceView, loadingView: FeedLoadingView, errorView: FeedErrorView, mapper: @escaping Mapper) {
+    public init(resourceView: View, loadingView: FeedLoadingView, errorView: FeedErrorView, mapper: @escaping Mapper) {
         self.errorView = errorView
         self.loadingView = loadingView
         self.resourceView = resourceView
@@ -37,7 +39,7 @@ public final class LoadSourcePresenter {
         errorView.display(.noError)
     }
     
-    public func didFinishLoading(with resource: String) {
+    public func didFinishLoading(with resource: Resource) {
         resourceView.display(mapper(resource))
         loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
