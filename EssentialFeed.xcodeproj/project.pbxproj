@@ -564,6 +564,14 @@
 			path = "Image Comments API";
 			sourceTree = "<group>";
 		};
+		C547D998296C8877003AF74B /* FeedUI */ = {
+			isa = PBXGroup;
+			children = (
+				C567E9B0291420C500438079 /* FeedSnapshotTests.swift */,
+			);
+			path = FeedUI;
+			sourceTree = "<group>";
+		};
 		C5506D0928ACDE9400017508 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,8 +724,8 @@
 			isa = PBXGroup;
 			children = (
 				C567E9B229142C9C00438079 /* Helpers */,
+				C547D998296C8877003AF74B /* FeedUI */,
 				C5B7F65028A7D2D900A53B0B /* EssentialFeediOSTests-Bridging-Header.h */,
-				C567E9B0291420C500438079 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
