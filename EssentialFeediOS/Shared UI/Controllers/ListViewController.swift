@@ -22,6 +22,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataSource.defaultRowAnimation = .fade
         tableView.dataSource = dataSource
         configureErrorView()
         refresh()
@@ -55,7 +56,7 @@ public final class ListViewController: UITableViewController, UITableViewDataSou
         tableView.sizeTableHeaderToFit()
     }
     
-    // works without this 
+    // works without this
     public override func traitCollectionDidChange(_ previous: UITraitCollection?) {
         if previous?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
             tableView.reloadData()
