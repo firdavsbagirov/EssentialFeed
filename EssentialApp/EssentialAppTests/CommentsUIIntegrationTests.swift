@@ -108,28 +108,51 @@ class CommentsUIIntegrationTests: XCTestCase {
     
     func test_loadCommentsCompletion_rendersErrorMessageOnErrorUntilNextReload() {
         let (sut, loader) = makeSUT()
-
+        
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.errorMessage, nil)
-
+        
         loader.completeCommentsLoadingWithError(at: 0)
         XCTAssertEqual(sut.errorMessage, loadError)
-
+        
         sut.simulateUserInitiatedReload()
         XCTAssertEqual(sut.errorMessage, nil)
     }
-
+    
     func test_tapOnErrorView_hidesErrorMessage() {
         let (sut, loader) = makeSUT()
-
+        
         sut.loadViewIfNeeded()
         XCTAssertEqual(sut.errorMessage, nil)
-
+        
         loader.completeCommentsLoadingWithError(at: 0)
         XCTAssertEqual(sut.errorMessage, loadError)
-
+        
         sut.simulateErrorViewTap()
         XCTAssertEqual(sut.errorMessage, nil)
+    }
+    
+    func test_deinit_cancelsRunningRequest() {
+        var cancelCallCount = 0
+        
+        var sut: ListViewController?
+        
+        autoreleasepool {
+            sut = CommentsUIComposer.commentsComposedWith(commentsLoader: {
+                PassthroughSubject<[ImageComment], Error>()
+                    .handleEvents(receiveCancel: {
+                        cancelCallCount += 1
+                    }).eraseToAnyPublisher()
+            })
+            
+            sut?.loadViewIfNeeded()
+        }
+        
+        XCTAssertEqual(cancelCallCount, 0)
+        
+        sut = nil
+        
+        XCTAssertEqual(cancelCallCount, 1)
     }
     
     // MARK: - Helpers
@@ -159,7 +182,7 @@ class CommentsUIIntegrationTests: XCTestCase {
     }
     
     private class LoaderSpy {
-                
+        
         private var requests = [PassthroughSubject<[ImageComment], Error>]()
         
         var loadCommentsCallCount: Int {
