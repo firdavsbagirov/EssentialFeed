@@ -21,7 +21,7 @@ extension ListViewController {
     }
     
     
-    func simulateErorrViewTap() {
+    func simulateErrorViewTap() {
         errorView.simulateTap()
     }
     

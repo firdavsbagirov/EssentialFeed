@@ -39,6 +39,8 @@
 		C5B2216E28F5D95600FC61CF /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B2216B28F5D95600FC61CF /* EssentialFeediOS.framework */; };
 		C5B2216F28F5D95600FC61CF /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5B2216B28F5D95600FC61CF /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5C1B86C291576D000CF93F6 /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C1B86B291576D000CF93F6 /* UIView+TestHelpers.swift */; };
+		C5DDA39329745BDB0026A7CF /* CommentsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDA39229745BDB0026A7CF /* CommentsUIComposer.swift */; };
+		C5DDA39529745C0B0026A7CF /* CommentsUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DDA39429745C0B0026A7CF /* CommentsUIIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		C5B2216A28F5D95600FC61CF /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2216B28F5D95600FC61CF /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C1B86B291576D000CF93F6 /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
+		C5DDA39229745BDB0026A7CF /* CommentsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIComposer.swift; sourceTree = "<group>"; };
+		C5DDA39429745C0B0026A7CF /* CommentsUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsUIIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 				C539528128F5D6D500094060 /* LaunchScreen.storyboard */,
 				C539528428F5D6D500094060 /* Info.plist */,
 				C5599D6429657A1700703DC2 /* CombineHelpers.swift */,
+				C5DDA39229745BDB0026A7CF /* CommentsUIComposer.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				C50D2F4128F8805E00ED7ADF /* EssentialAppTests-Bridging-Header.h */,
 				C50F8DB2290842630022D353 /* SceneDelegateTests.swift */,
 				C526AE7A2908E1CE0046ABC8 /* FeedAcceptanceTests.swift */,
+				C5DDA39429745C0B0026A7CF /* CommentsUIIntegrationTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 				C50F8DBA290845720022D353 /* FeedUIComposer.swift in Sources */,
 				C5599D6529657A1700703DC2 /* CombineHelpers.swift in Sources */,
 				C539527728F5D6D500094060 /* AppDelegate.swift in Sources */,
+				C5DDA39329745BDB0026A7CF /* CommentsUIComposer.swift in Sources */,
 				C50F8DBC290845720022D353 /* FeedViewAdapter.swift in Sources */,
 				C539527928F5D6D500094060 /* SceneDelegate.swift in Sources */,
 				C50F8DBE290845720022D353 /* WeakRefVirtualProxy.swift in Sources */,
@@ -384,6 +391,7 @@
 				C50F8DD3290845C50022D353 /* FeedUIIntegrationTests.swift in Sources */,
 				C50F8DCD290845990022D353 /* FeedImageCell+TestHelpers.swift in Sources */,
 				C551A6CC29683E2600FF9F51 /* FeedUIIntegrationsTests+Localization.swift in Sources */,
+				C5DDA39529745C0B0026A7CF /* CommentsUIIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
