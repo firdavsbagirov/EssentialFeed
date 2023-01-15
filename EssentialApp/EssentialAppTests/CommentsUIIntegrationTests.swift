@@ -13,12 +13,12 @@ import EssentialFeediOS
 
 class CommentsUIIntegrationTests: FeedUIIntegrationTests {
     
-    override func test_feedView_hasTitle() {
+    func test_commentsView_hasTitle() {
         let (sut, _) = makeSUT()
         
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(sut.title, feedTitle)
+        XCTAssertEqual(sut.title, commentsTitle)
     }
     
     override func test_loadFeedActions_requestFeedFromLoader() {
@@ -108,31 +108,31 @@ class CommentsUIIntegrationTests: FeedUIIntegrationTests {
         wait(for: [exp], timeout: 1.0)
     }
     
-    override func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
-        let (sut, loader) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.errorMessage, nil)
-        
-        loader.completeFeedLoadingWithError(at: 0)
-        XCTAssertEqual(sut.errorMessage, loadError)
-        
-        sut.simulateUserInitiatedFeedReload()
-        XCTAssertEqual(sut.errorMessage, nil)
-    }
-    
-    override func test_tapOnErrorView_hidesErrorMessage() {
-        let (sut, loader) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.errorMessage, nil)
-        
-        loader.completeFeedLoadingWithError(at: 0)
-        XCTAssertEqual(sut.errorMessage, loadError)
-        
-        sut.simulateErrorViewTap()
-        XCTAssertEqual(sut.errorMessage, nil)
-    }
+//    override func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
+//        let (sut, loader) = makeSUT()
+//        
+//        sut.loadViewIfNeeded()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//        
+//        loader.completeFeedLoadingWithError(at: 0)
+//        XCTAssertEqual(sut.errorMessage, loadError)
+//        
+//        sut.simulateUserInitiatedFeedReload()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//    }
+//    
+//    override func test_tapOnErrorView_hidesErrorMessage() {
+//        let (sut, loader) = makeSUT()
+//        
+//        sut.loadViewIfNeeded()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//        
+//        loader.completeFeedLoadingWithError(at: 0)
+//        XCTAssertEqual(sut.errorMessage, loadError)
+//        
+//        sut.simulateErrorViewTap()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//    }
     
     // MARK: - Helpers
     

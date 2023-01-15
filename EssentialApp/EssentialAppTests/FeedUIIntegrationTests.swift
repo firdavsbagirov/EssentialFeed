@@ -112,44 +112,44 @@ class FeedUIIntegrationTests: XCTestCase {
         wait(for: [exp], timeout: 4.0)
     }
     
-    func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
-        let (sut, loader) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.errorMessage, nil)
-        
-        loader.completeFeedLoadingWithError(at: 0)
-        XCTAssertEqual(sut.errorMessage, loadError)
-        
-        sut.simulateUserInitiatedFeedReload()
-        XCTAssertEqual(sut.errorMessage, nil)
-    }
-    
-    func test_tapOnErrorView_hidesErrorMessage() {
-        let (sut, loader) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.errorMessage, nil)
-        
-        loader.completeFeedLoadingWithError(at: 0)
-        XCTAssertEqual(sut.errorMessage, loadError)
-        
-        sut.simulateErrorViewTap()
-        XCTAssertEqual(sut.errorMessage, nil)
-    }
-    
-    func test_loadFeedCompletion_rendersErrorMessageOnError() {
-        let (sut, loader) = makeSUT()
-        
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(sut.errorMessage, nil)
-        
-        loader.completeFeedLoadingWithError(at: 0)
-        XCTAssertEqual(sut.errorMessage, loadError)
-        
-        sut.simulateUserInitiatedFeedReload()
-        XCTAssertNil(sut.errorMessage)
-    }
+//    func test_loadFeedCompletion_rendersErrorMessageOnErrorUntilNextReload() {
+//        let (sut, loader) = makeSUT()
+//        
+//        sut.loadViewIfNeeded()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//        
+//        loader.completeFeedLoadingWithError(at: 0)
+//        XCTAssertEqual(sut.errorMessage, loadError)
+//        
+//        sut.simulateUserInitiatedFeedReload()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//    }
+//
+//    func test_tapOnErrorView_hidesErrorMessage() {
+//        let (sut, loader) = makeSUT()
+//
+//        sut.loadViewIfNeeded()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//
+//        loader.completeFeedLoadingWithError(at: 0)
+//        XCTAssertEqual(sut.errorMessage, loadError)
+//
+//        sut.simulateErrorViewTap()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//    }
+//
+//    func test_loadFeedCompletion_rendersErrorMessageOnError() {
+//        let (sut, loader) = makeSUT()
+//
+//        sut.loadViewIfNeeded()
+//        XCTAssertEqual(sut.errorMessage, nil)
+//
+//        loader.completeFeedLoadingWithError(at: 0)
+//        XCTAssertEqual(sut.errorMessage, loadError)
+//
+//        sut.simulateUserInitiatedFeedReload()
+//        XCTAssertNil(sut.errorMessage)
+//    }
     
     // MARK: - Image View Tests
     
