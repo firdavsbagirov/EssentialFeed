@@ -14,8 +14,8 @@ public protocol FeedImageCellControllerDelegate {
 }
 
 public final class FeedImageCellController: NSObject {
-    
     public typealias ResourceViewModel = UIImage
+    
     private let viewModel: FeedImageViewModel
     private let delegate: FeedImageCellControllerDelegate
     private var cell: FeedImageCell?
@@ -24,10 +24,10 @@ public final class FeedImageCellController: NSObject {
         self.viewModel = viewModel
         self.delegate = delegate
     }
-    
 }
+
 extension FeedImageCellController: UITableViewDataSource, UITableViewDelegate, UITableViewDataSourcePrefetching {
-    
+        
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -37,6 +37,7 @@ extension FeedImageCellController: UITableViewDataSource, UITableViewDelegate, U
         cell?.locationContainer.isHidden = !viewModel.hasLocation
         cell?.locationLabel.text = viewModel.location
         cell?.descriptionLabel.text = viewModel.description
+        cell?.feedImageView.image = nil
         cell?.onRetry = { [weak self] in
             self?.delegate.didRequestImage()
         }
@@ -66,13 +67,12 @@ extension FeedImageCellController: UITableViewDataSource, UITableViewDelegate, U
         delegate.didCancelImageRequest()
     }
     
-    func releaseCellForReuse() {
+    private func releaseCellForReuse() {
         cell = nil
     }
 }
-
+ 
 extension FeedImageCellController: ResourceView, ResourceLoadingView, ResourceErrorView {
-    
     public func display(_ viewModel: UIImage) {
         cell?.feedImageView.setImageAnimated(viewModel)
     }
@@ -84,7 +84,4 @@ extension FeedImageCellController: ResourceView, ResourceLoadingView, ResourceEr
     public func display(_ viewModel: ResourceErrorViewModel) {
         cell?.feedImageRetryButton.isHidden = viewModel.message == nil
     }
-    
-    
 }
-
