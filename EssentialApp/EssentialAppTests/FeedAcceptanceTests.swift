@@ -86,6 +86,9 @@ class FeedAcceptanceTests: XCTestCase {
         case "/essential-feed/v1/feed":
             return makeFeedData()
             
+        case "/essential-feed/v1/image/2AB2AE66-A4B7-4A16-B374-51BBAC8DB086/comments":
+            return makeCommentsData()
+            
         default:
             return Data()
         }
