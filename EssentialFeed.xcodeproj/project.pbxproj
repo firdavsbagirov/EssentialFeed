@@ -130,6 +130,7 @@
 		C5B1D1BC297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B1D1B9297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light.png */; };
 		C5B1D1BD297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B1D1BA297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_dark.png */; };
 		C5B1D1BE297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B1D1BB297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */; };
+		C5B1D1C0297D581A0080F5CE /* Paginated.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B1D1BF297D581A0080F5CE /* Paginated.swift */; };
 		C5B6D9B628B5389200F73D8E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9B528B5389200F73D8E /* ErrorView.swift */; };
 		C5B6D9BB28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */; };
 		C5B7F64328A7C3A700A53B0B /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5B7F63928A7C3A600A53B0B /* EssentialFeediOS.framework */; };
@@ -313,6 +314,7 @@
 		C5B1D1B9297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light.png; sourceTree = "<group>"; };
 		C5B1D1BA297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_dark.png; sourceTree = "<group>"; };
 		C5B1D1BB297D517C0080F5CE /* FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FEED_WITH_LOAD_MORE_ERROR_light_extraExtraExtraLarge.png; sourceTree = "<group>"; };
+		C5B1D1BF297D581A0080F5CE /* Paginated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paginated.swift; sourceTree = "<group>"; };
 		C5B6D9B528B5389200F73D8E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		C5B6D9BA28B53ECB00F73D8E /* UIRefreshControls+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControls+Helpers.swift"; sourceTree = "<group>"; };
 		C5B7F63928A7C3A600A53B0B /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -632,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				840886F028155DCC00120BC8 /* HTTPClient.swift */,
+				C5B1D1BF297D581A0080F5CE /* Paginated.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				84226E6A287C78BC006EAECB /* CoreDataHelpers.swift in Sources */,
 				C53ECA8B28C097200077953C /* FeedImageDataLoader.swift in Sources */,
 				C53A7A5028F59EEB007FAFFF /* CoreDataFeedStore+FeedStore.swift in Sources */,
+				C5B1D1C0297D581A0080F5CE /* Paginated.swift in Sources */,
 				843017742877463800EB1FBA /* CoreDataFeedStore.swift in Sources */,
 				C5599D672965BF0300703DC2 /* ImageCommentsMapper.swift in Sources */,
 				84226E6C287C792E006EAECB /* ManagedCache.swift in Sources */,
