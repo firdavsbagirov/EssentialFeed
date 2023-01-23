@@ -9,7 +9,7 @@ import Foundation
 
 public protocol ResourceView {
     associatedtype ResourceViewModel
-
+    
     func display(_ viewModel: ResourceViewModel)
 }
 
@@ -32,6 +32,13 @@ public final class LoadResourcePresenter<Resource, View: ResourceView> {
         self.loadingView = loadingView
         self.resourceView = resourceView
         self.mapper = mapper
+    }
+    
+    public init(resourceView: View, loadingView: ResourceLoadingView, errorView: ResourceErrorView) where Resource == View.ResourceViewModel {
+        self.resourceView = resourceView
+        self.loadingView = loadingView
+        self.errorView = errorView
+        self.mapper = { $0 }
     }
     
     public func didStartLoading() {
